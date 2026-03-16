@@ -8,107 +8,1184 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200;300;400;600;700&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://atlas.collegeboard.org/apricot/prod/4.8.0/widgets.css">
-
   <style>
-* {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body {
-font-family: "Source Sans 3","Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-background: #f5f5f5;
-color: #1e1e1e;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-}
+    body {
+      font-family: "Source Sans 3", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f5f5f5;
+      color: #1e1e1e;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-/* Typography */
-.cb-roboto { font-family: "Source Sans 3", sans-serif; }
-.cb-roboto-light { font-weight: 300; }
-.cb-roboto-medium { font-weight: 600; }
-.cb-roboto-bold { font-weight: 700; }
-.cb-roboto-slab-bold { font-family: "Roboto Slab", serif; font-weight: 700; }
-.cb-roboto-thin { font-weight: 200; }
-
-.cb-h1 { font-size: 40px; font-weight: 300; line-height: 1.2; }
-.cb-h2 { font-size: 28px; font-weight: 300; line-height: 1.3; }
-.cb-h3 { font-size: 22px; font-weight: 600; line-height: 1.3; }
-.cb-h4 { font-size: 16px; font-weight: 400; line-height: 1.4; }
-.cb-h5 { font-size: 14px; line-height: 1.4; }
-
-.cb-paragraph1-res { font-size: 14px; line-height: 1.5; }
-.cb-paragraph2-res { font-size: 15px; line-height: 1.5; }
-.cb-paragraph2-st { font-size: 16px; font-weight: 600; line-height: 1.3; }
-.cb-paragraph4-res { font-size: 50px; font-weight: 300; line-height: 1; letter-spacing: -0.5px; }
-.cb-font-size-small { font-size: 13px; line-height: 1.4; }
-
-/* Layout */
-.container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 24px;
-}
-
-.header {
-background: white;
-padding: 20px;
-border-bottom: 1px solid #ddd;
-}
-
-.card {
-background: white;
-border-radius: 8px;
-padding: 24px;
-margin-bottom: 20px;
-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.button {
-background: #0a6cff;
-color: white;
-border: none;
-padding: 10px 16px;
-border-radius: 4px;
-cursor: pointer;
-}
-
-.button:hover {
-background: #084ecf;
-}
+    /* Typography */
+    .cb-roboto { font-family: "Source Sans 3", sans-serif; }
+    .cb-roboto-light { font-weight: 300; }
+    .cb-roboto-medium { font-weight: 600; }
+    .cb-roboto-bold { font-weight: 700; }
+    .cb-roboto-slab-bold { font-family: "Roboto Slab", serif; font-weight: 700; }
+    .cb-roboto-thin { font-weight: 200; }
+    
+    .cb-h1 { font-size: 40px; font-weight: 300; line-height: 1.2; }
+    .cb-h2 { font-size: 28px; font-weight: 300; line-height: 1.3; }
+    .cb-h3 { font-size: 22px; font-weight: 600; line-height: 1.3; }
+    .cb-h4 { font-size: 16px; font-weight: 400; line-height: 1.4; }
+    .cb-h5 { font-size: 14px; line-height: 1.4; }
+    
+    .cb-paragraph1-res { font-size: 14px; line-height: 1.5; }
+    .cb-paragraph2-res { font-size: 15px; line-height: 1.5; }
+    .cb-paragraph2-st { font-size: 16px; font-weight: 600; line-height: 1.3; }
+    .cb-paragraph4-res { font-size: 50px; font-weight: 300; line-height: 1; letter-spacing: -0.5px; }
+    .cb-font-size-small { font-size: 13px; line-height: 1.4; }
+    .cb-font-size-xlarge-res { font-size: 86px; font-weight: 300; line-height: 0.9; letter-spacing: -2px; }
+    
+    /* Colors */
+    .cb-white-color { color: #fff !important; }
+    .cb-black1 { color: #1e1e1e; }
+    .cb-gray1-color { color: #424242; }
+    .cb-gray5-bg { background: #f5f5f5; }
+    .cb-white-bg { background: #fff; }
+    .cb-blue5-bg { background: #3f51b5; }
+    
+    /* Spacing */
+    .cb-margin-top-8 { margin-top: 8px; }
+    .cb-margin-top-16 { margin-top: 16px; }
+    .cb-margin-top-24 { margin-top: 24px; }
+    .cb-margin-top-32 { margin-top: 32px; }
+    .cb-margin-top-48 { margin-top: 48px; }
+    .cb-margin-top-72 { margin-top: 72px; }
+    .cb-margin-bottom-4 { margin-bottom: 4px; }
+    .cb-margin-bottom-8 { margin-bottom: 8px; }
+    .cb-margin-bottom-16 { margin-bottom: 16px; }
+    .cb-margin-bottom-24 { margin-bottom: 24px; }
+    .cb-margin-bottom-32 { margin-bottom: 32px; }
+    .cb-margin-bottom-48 { margin-bottom: 48px; }
+    .cb-margin-left-4 { margin-left: 4px; }
+    .cb-margin-left-16 { margin-left: 16px; }
+    .cb-margin-right-8 { margin-right: 8px; }
+    .cb-padding-left-8 { padding-left: 8px; }
+    .cb-padding-left-16 { padding-left: 16px; }
+    .cb-padding-top-4 { padding-top: 4px; }
+    .cb-padding-top-8 { padding-top: 8px; }
+    .cb-padding-bottom-8 { padding-bottom: 8px; }
+    .cb-padding-xs-up-top-16 { padding-top: 16px; }
+    .cb-padding-xs-up-bottom-16 { padding-bottom: 16px; }
+    .cb-no-padding { padding: 0; }
+    .cb-no-padding-left { padding-left: 0 !important; }
+    
+    /* Layout */
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 15px; }
+    .row { display: flex; flex-wrap: wrap; margin: 0 -15px; }
+    .col-xs-12 { width: 100%; padding: 0 15px; }
+    .col-md-4 { width: 33.33%; padding: 0 15px; }
+    .col-md-7 { width: 58.33%; padding: 0 15px; }
+    .offset-md-1 { margin-left: 8.33%; }
+    
+    @media (max-width: 991px) {
+      .col-md-4, .col-md-7 { width: 100%; }
+      .offset-md-1 { margin-left: 0; }
+    }
+    
+    .display-flex { display: flex; }
+    .flex-column { flex-direction: column; }
+    .flex-wrap { flex-wrap: wrap; }
+    .justify-content-start { justify-content: flex-start; }
+    .justify-content-between { justify-content: space-between; }
+    .justify-content-end { justify-content: flex-end; }
+    .align-items-center { align-items: center; }
+    .align-self-center { align-self: center; }
+    .align-self-end { align-self: flex-end; }
+    .display-inline-block { display: inline-block; }
+    
+    .cb-padding-lg-up-left-72, .cb-padding-lg-up-right-72 { padding-left: 72px; padding-right: 72px; }
+    .cb-padding-md-left-8 { padding-left: 8px; }
+    
+    @media (max-width: 1023px) {
+      .cb-padding-lg-up-left-72, .cb-padding-lg-up-right-72 { padding-left: 8px; padding-right: 8px; }
+    }
+    
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+    
+    /* Header */
+    .home-header {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    
+    .cb-band-panel-title { margin-bottom: 16px; }
+    
+    .header-name { font-size: 40px; font-weight: 300; margin-bottom: 8px; }
+    .header-subtext { font-size: 28px; font-weight: 300; margin-bottom: 32px; }
+    
+    .cb-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 32px;
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      border-radius: 24px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    
+    .cb-btn-primary { background: #3f51b5; color: #fff; }
+    .cb-btn-yellow { background: #ffd600; color: #1e1e1e; }
+    .cb-btn:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); }
+    
+    /* Fee Waiver */
+    .fee-waiver {
+      border-bottom: 1px solid #dadce0;
+      padding: 32px 0;
+    }
+    
+    .expandable-header {
+      margin-bottom: 16px;
+    }
+    
+    .icon-container {
+      width: auto;
+      padding-right: 12px;
+    }
+    
+    .cb-icon {
+      display: inline-block;
+      font-style: normal;
+    }
+    
+    .cb-icon-32 { font-size: 32px; }
+    
+    .cb-icon.cb-tag::before { content: "🏷️"; }
+    .cb-icon.cb-cal-full::before { content: "📅"; }
+    .cb-icon.cb-east::before { content: "→"; font-weight: 300; }
+    .cb-icon.cb-right::before { content: "›"; font-weight: 300; font-size: 20px; }
+    .cb-icon.cb-compose::before { content: "📝"; }
+    .cb-icon.cb-signed-in::before { content: "👤"; }
+    .cb-icon.cb-list::before { content: "📋"; }
+    
+    .cb-icon-circular {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+    
+    .cb-blue3-color { background: #1a73e8; color: #fff; }
+    .cb-blue4-color { background: #aecbfa; color: #1e1e1e; }
+    .cb-blue5-color { background: #4285f4; color: #fff; }
+    .cb-opacity-7 { opacity: 0.7; }
+    
+    .cb-input {
+      position: relative;
+      margin-bottom: 16px;
+    }
+    
+    .cb-input input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #dadce0;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    
+    .cb-input input:focus {
+      border-color: #1a73e8;
+    }
+    
+    .cb-input label {
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      font-size: 14px;
+      color: #5f6368;
+      pointer-events: none;
+      transition: all 0.2s;
+    }
+    
+    .cb-input input:focus + label,
+    .cb-input input:not([data-cb-value=""]) + label {
+      top: -8px;
+      left: 12px;
+      font-size: 12px;
+      background: #fff;
+      padding: 0 4px;
+      color: #1a73e8;
+    }
+    
+    /* Task Cards */
+    .important-tasks {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    
+    @media (max-width: 767px) {
+      .important-tasks { flex-direction: column; }
+    }
+    
+    .tasks-card {
+      flex: 1;
+      background: #fff;
+      border: 1px solid #dadce0;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(60, 64, 67, 0.15);
+      transition: box-shadow 0.2s;
+    }
+    
+    .tasks-card:hover {
+      box-shadow: 0 2px 6px rgba(60, 64, 67, 0.25);
+    }
+    
+    .tasks-card-content {
+      padding: 24px;
+    }
+    
+    .task-button {
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      font-family: inherit;
+      padding: 0;
+    }
+    
+    .link-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+    
+    /* Dividers */
+    hr, .hr {
+      height: 1px;
+      background: #dadce0;
+      border: none;
+      margin: 32px 0 16px;
+    }
+    
+    .cb-gray-5-bg {
+      background: #f5f5f5;
+    }
+    
+    /* Cards */
+    .cb-card {
+      background: #fff;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 2px 6px rgba(60, 64, 67, 0.15);
+      overflow: visible;
+    }
+    
+    .cb-card-content {
+      padding: 32px 40px;
+    }
+    
+    .cb-no-margin-top { margin-top: 0 !important; }
+    
+    /* Registration Cards */
+    .registration-card .card-content {
+      color: #5f6368;
+    }
+    
+    /* Score Cards */
+    .score-card {
+      position: relative;
+      margin-bottom: 40px !important;
+      background: #fff;
+      border-right: 4px solid #71c5e8;
+    }
+    
+    .score-card .cb-card-content {
+      padding: 32px 40px;
+    }
+    
+    .score-card .hr {
+      margin: 20px 0 28px;
+      height: 1px;
+      background: #e8eaed;
+    }
+    
+    .score-card .hr.visible {
+      background: #e8eaed;
+      height: 1px;
+    }
+    
+    .score-card .hr.coming {
+      background: #ffa726;
+      height: 4px;
+    }
+    
+    .cb-date-time-tags {
+      display: flex;
+      gap: 8px;
+      font-size: 15px;
+      color: #5f6368;
+      font-weight: 400;
+    }
+    
+    .cb-date-time-tags p {
+      margin: 0;
+    }
+    
+    .cb-date-time-tags p::after {
+      content: " |";
+      margin-left: 8px;
+      color: #dadce0;
+    }
+    
+    .cb-date-time-tags p:last-child::after {
+      content: "";
+    }
+    
+    /* Score Display */
+    .score {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    
+    .total-score {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    
+    .flex-nowrap {
+      flex-wrap: nowrap;
+    }
+    
+    .range-container {
+      margin-left: 12px;
+    }
+    
+    .separator {
+      width: 1px;
+      height: 65px;
+      background: #dadce0;
+      margin-right: 12px;
+    }
+    
+    .separator.small {
+      height: 45px;
+    }
+    
+    .score-range {
+      font-size: 13px;
+      color: #5f6368;
+      line-height: 1.3;
+      font-weight: 300;
+    }
+    
+    .cb-align-left {
+      text-align: left;
+    }
+    
+    .bottom-margin {
+      margin-bottom: 2px;
+    }
+    
+    .partial-scores {
+      display: flex;
+      gap: 60px;
+      padding-left: 0 !important;
+      margin-top: 20px;
+    }
+    
+    @media (max-width: 991px) {
+      .partial-scores {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+    
+    .score.small {
+      min-width: 200px;
+    }
+    
+    .get-score-icon {
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #4285f4;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s;
+    }
+    
+    .get-score-icon:hover {
+      background: #3367d6;
+      transform: translateY(-50%) scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .get-score-icon::before {
+      content: "→";
+      font-weight: 300;
+    }
+    
+    /* Sidebar */
+    .primary-cta, .next-steps {
+      margin-bottom: 32px;
+    }
+    
+    .cb-card-list-vertical {
+      border: 1px solid #dadce0;
+      border-radius: 12px;
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(60, 64, 67, 0.15);
+    }
+    
+    .cb-card-list-vertical > div {
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .cb-card-list-vertical > div:last-child {
+      border-bottom: none;
+    }
+    
+    .cb-card-list-vertical > div:last-child .hr {
+      display: none;
+    }
+    
+    .cb-card-list-vertical a {
+      color: #1e1e1e;
+      text-decoration: none;
+      font-weight: 400;
+      transition: background 0.2s;
+      display: block;
+    }
+    
+    .cb-card-list-vertical .row:hover {
+      background: #f8f9fa;
+    }
+    
+    /* Help Card */
+    .help-card {
+      background: #e8f4f8;
+      border: 1px solid #b3dce8;
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 24px;
+    }
+    
+    .help-card-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    
+    .help-card-content-image-container {
+      flex-shrink: 0;
+    }
+    
+    .help-card-content-image {
+      width: 48px;
+      height: 48px;
+    }
+    
+    .help-card-content-text {
+      flex: 1;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    
+    .help-card a {
+      color: #1565c0;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .help-card a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Hidden utilities */
+    .hidden { display: none !important; }
+    .hidden-xs-only { display: block; }
+    .hidden-sm-up { display: none; }
+    
+    @media (max-width: 767px) {
+      .hidden-xs-only { display: none; }
+      .hidden-sm-up { display: block; }
+      .cb-margin-top-72 { margin-top: 48px; }
+    }
   </style>
-
 </head>
-
 <body>
+  <!-- Blue Hero Header -->
+  <div class="cb-gray5-bg">
+    <div id="qc-id-homepage-header-homeheader" class="home-header cb-band cb-band-hero cb-band-panel cb-blue5-bg cb-align-center">
+      <div class="cb-band-panel-content cb-white-color">
+        <div class="cb-band-panel-title cb-margin-bottom-16 cb-roboto">
+          <div class="header-name cb-h1">Hello <span id="qc-id-header-first-name">Arjun</span></div>
+          <div class="header-subtext cb-h2 cb-roboto-light">Manage your test registrations and scores.</div>
+        </div>
+        <div class="cb-btn-row">
+          <button type="button" class="cb-btn cb-btn-primary cb-btn-yellow cb-roboto-bold">
+            Register for the SAT
+          </button>
+        </div>
+      </div>
+    </div>
 
-<div class="container">
+    <!-- Fee Waiver Section -->
+    <div class="fee-waiver cb-white-bg">
+      <div class="container">
+        <div class="expandable-header col-xs-12 display-flex align-items-center flex-wrap">
+          <span class="row cb-roboto-slab-bold cb-paragraph2-res cb-gray1-color cb-margin-bottom-8 cb-margin-top-8" style="width: 100%;">
+            <span class="icon-container" style="flex-shrink: 0;">
+              <i class="cb-icon cb-tag cb-icon-32" aria-hidden="false"></i>
+            </span>
+            <span class="text-container" role="heading" aria-level="2" style="flex: 1;">
+              <span class="expandable-header-text"><div>Got a Code?</div></span>
+            </span>
+          </span>
+        </div>
+        <span class="cb-roboto col-xs-12 display-flex" style="padding-left: 44px;">
+          <span>
+            <span>
+              <div class="header-text">
+                Enter your code here. Ask your counselor for more details about fee waivers - 
+                <a href="https://satsuite.collegeboard.org/sat/registration/fee-waivers/fee-waiver-eligibility" target="_blank" style="color: #1565c0; text-decoration: none;">learn if you're eligible</a>.
+              </div>
+            </span>
+          </span>
+        </span>
+        <div class="code-submit cb-margin-top-24" style="padding-left: 44px;">
+          <div class="row" style="gap: 12px;">
+            <div style="flex: 1; max-width: 800px;">
+              <div class="cb-input">
+                <input id="feeWaiver" aria-invalid="false" type="text" data-cb-value="">
+                <label for="feeWaiver">Enter code</label>
+              </div>
+            </div>
+            <div>
+              <button type="button" class="cb-btn cb-btn-primary cb-btn-yellow" disabled style="opacity: 0.5; cursor: not-allowed;">
+                <span>Submit Code</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<div class="header">
-<h1 class="cb-h1">My SAT Home Page</h1>
-</div>
+    <!-- Main Content -->
+    <div class="container">
+      <div class="cb-padding-md-left-8 cb-padding-lg-up-left-72 cb-padding-lg-up-right-72">
+        
+        <!-- Don't Forget These Steps -->
+        <div class="cb-margin-top-48">
+          <div class="row cb-margin-bottom-32">
+            <div class="col-xs-12">
+              <h2 class="cb-roboto-light cb-h2" style="font-size: 26px;">
+                <span class="display-inline-block">Don't Forget These Steps</span>
+              </h2>
+              <h3 class="cb-roboto-light cb-h4 cb-margin-top-8 cb-black1" style="color: #5f6368; font-size: 15px;">
+                <span class="display-inline-block">
+                  <div>Get deadlines and details for test-related tasks.</div>
+                </span>
+              </h3>
+            </div>
+          </div>
 
-<div class="card">
-<h2 class="cb-h2">Welcome</h2>
-<p class="cb-paragraph1-res">
-This is the SAT student dashboard page layout.
-</p>
-</div>
+          <div class="important-tasks">
+            <div class="tasks-card" style="max-width: 400px;">
+              <div class="flex-column cb-padding-xs-up-top-16 cb-padding-xs-up-bottom-16 tasks-card-content">
+                <button class="task-button" type="button">
+                  <div class="display-flex link-content" style="align-items: center;">
+                    <div style="flex-shrink: 0; margin-right: 16px;">
+                      <span class="cb-icon cb-icon-circular" style="background: #1a73e8; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                        </svg>
+                      </span>
+                    </div>
+                    <div style="flex: 1; text-align: left; font-size: 14px; line-height: 1.4; color: #1e1e1e;">
+                      Don't forget to send your available scores.
+                    </div>
+                    <div style="flex-shrink: 0; margin-left: 12px;">
+                      <span style="font-size: 20px; color: #5f6368;">→</span>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<div class="card">
-<h3 class="cb-h3">Scores</h3>
-<p class="cb-paragraph2-res">View your SAT scores and reports.</p>
-<button class="button">View Scores</button>
-</div>
+        <hr class="cb-margin-top-32 cb-margin-bottom-16">
 
-<div class="card">
-<h3 class="cb-h3">Practice</h3>
-<p class="cb-paragraph2-res">Access SAT practice tests and preparation tools.</p>
-<button class="button">Start Practice</button>
-</div>
+        <!-- Main Layout: Scores + Sidebar -->
+        <div class="row">
+          <!-- Left Column: My Upcoming Tests and Scores -->
+          <div class="col-xs-12 col-md-7 cb-margin-top-32">
+            
+            <!-- My Upcoming Tests -->
+            <div class="row cb-margin-bottom-16">
+              <div class="cb-margin-left-4">
+                <div class="row cb-padding-left-8 cb-margin-bottom-24">
+                  <div class="col-xs-12">
+                    <h2 class="cb-roboto-light cb-h2" style="font-size: 26px;">
+                      <span class="display-inline-block">My Upcoming Tests</span>
+                    </h2>
+                  </div>
+                </div>
+              </div>
 
-</div>
+              <div class="col-xs-12">
+                <div class="cb-margin-bottom-32">
+                  <div class="registration-card cb-card cb-no-margin-top cb-margin-bottom-48">
+                    <div class="cb-card-content" style="padding: 32px;">
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <div class="card-content">
+                            <div class="cb-paragraph2-res cb-roboto cb-margin-bottom-8" style="font-size: 16px; font-weight: 400; color: #1e1e1e;">
+                              You Don't Have Any Upcoming Tests.
+                            </div>
+                            <div class="hr cb-margin-top-8 cb-margin-bottom-24" style="display: none;"></div>
+                            <div class="cb-roboto-light cb-font-size-small" style="margin-top: 16px; color: #5f6368;">
+                              Taking the SAT at school? Your test date will show when you get scores.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            <hr class="cb-margin-right-8 cb-margin-top-16 cb-margin-bottom-32">
+
+            <!-- My Scores -->
+            <div class="row scores-section">
+              <div class="row cb-padding-left-8 cb-margin-bottom-8">
+                <div class="col-xs-12">
+                  <h2 class="cb-roboto-light cb-h2" style="font-size: 26px;">
+                    <span class="display-inline-block">My Scores</span>
+                  </h2>
+                  <h3 class="cb-roboto-light cb-h4 cb-margin-top-8" style="font-size: 15px; font-weight: 400; color: #5f6368; line-height: 1.5;">
+                    <span class="display-inline-block">
+                      <div>
+                        To see where you've already sent your scores or to check the status of recently placed orders, 
+                        visit the <a href="https://sendsatscores.collegeboard.org/" style="color: #1a73e8; text-decoration: underline; font-weight: 400;">Score Sends application</a>.
+                      </div>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+
+              <div class="col-xs-12">
+                <!-- Score Card 1: SAT December 2025 (MOST RECENT) -->
+                <div class="score-card cb-card cb-margin-top-48 cb-margin-bottom-48 visible">
+                  <div class="cb-card-content">
+                    <div class="row">
+                      <div class="col-xs-12 flex-column">
+                        <div id="display-title-2725" role="heading" aria-level="3" class="cb-h3 cb-roboto-medium cb-margin-bottom-8" style="font-size: 28px; font-weight: 600; color: #1e1e1e; margin-bottom: 12px;">
+                          SAT December 06, 2025 Administration
+                        </div>
+                        <div id="test-date-2725" class="cb-date-time-tags cb-paragraph1-res cb-roboto" style="font-size: 15px; color: #5f6368; font-weight: 400;">
+                          <p>December 6, 2025</p>
+                          <p>11th Grade</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="hr cb-margin-top-16 cb-margin-bottom-24 visible"></div>
+
+                        <div>
+                          <div class="cb-margin-bottom-16">
+                            <div class="display-flex score">
+                              <div class="flex-nowrap total-score">
+                                <div class="cb-roboto cb-paragraph1-res" style="font-size: 16px; font-weight: 600; color: #1e1e1e; margin-bottom: 12px;">Your Total Score</div>
+                                <div class="display-flex" style="align-items: baseline;">
+                                  <div class="cb-roboto cb-margin-right-8" style="font-size: 120px; font-weight: 300; line-height: 0.85; color: #1e1e1e; letter-spacing: -3px;">1430</div>
+                                  <div class="display-flex" style="flex-direction: column; justify-content: center;">
+                                    <div class="score-range" style="font-size: 15px; color: #5f6368; line-height: 1.3; font-weight: 400;">
+                                      <div>320 to</div>
+                                      <div>1520</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="partial-scores display-flex cb-no-padding-left" style="margin-top: 40px; gap: 120px;">
+                              <div class="display-flex score small">
+                                <div class="flex-nowrap total-score">
+                                  <div class="cb-roboto cb-paragraph2-st" style="font-size: 16px; font-weight: 600; color: #1e1e1e; margin-bottom: 12px;">Your Reading and Writing Score</div>
+                                  <div class="display-flex" style="align-items: baseline;">
+                                    <div class="cb-roboto cb-margin-right-8" style="font-size: 72px; font-weight: 300; line-height: 0.9; color: #1e1e1e; letter-spacing: -1px;">700</div>
+                                    <div class="display-flex" style="flex-direction: column; justify-content: center;">
+                                      <div class="score-range" style="font-size: 14px; color: #5f6368; line-height: 1.3; font-weight: 400;">
+                                        <div>160 to</div>
+                                        <div>760</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="display-flex score small">
+                                <div class="flex-nowrap total-score">
+                                  <div class="cb-roboto cb-paragraph2-st" style="font-size: 16px; font-weight: 600; color: #1e1e1e; margin-bottom: 12px;">Your Math Score</div>
+                                  <div class="display-flex" style="align-items: baseline;">
+                                    <div class="cb-roboto cb-margin-right-8" style="font-size: 72px; font-weight: 300; line-height: 0.9; color: #1e1e1e; letter-spacing: -1px;">730</div>
+                                    <div class="display-flex" style="flex-direction: column; justify-content: center;">
+                                      <div class="score-range" style="font-size: 14px; color: #5f6368; line-height: 1.3; font-weight: 400;">
+                                        <div>160 to</div>
+                                        <div>760</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <span role="link" class="get-score-icon cb-blue5-color" tabindex="0"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Score Card 2: SAT October 2025 -->
+                <div class="score-card cb-card cb-margin-top-48 cb-margin-bottom-48 visible">
+                  <div class="cb-card-content">
+                    <div class="row">
+                      <div class="col-xs-12 flex-column">
+                        <div id="display-title-2713" role="heading" aria-level="3" class="cb-h3 cb-roboto-medium cb-margin-bottom-8">
+                          SAT October 04, 2025 Administration
+                        </div>
+                        <div id="test-date-2713" class="cb-date-time-tags cb-paragraph1-res cb-roboto-light">
+                          <p>October 4, 2025</p>
+                          <p>11th Grade</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="hr cb-margin-top-16 cb-margin-bottom-24 visible"></div>
+
+                        <div>
+                          <div class="cb-margin-bottom-16">
+                            <div class="display-flex score">
+                              <div class="flex-nowrap total-score">
+                                <div class="cb-roboto-medium cb-paragraph1-res">Your Total Score</div>
+                                <div class="display-flex">
+                                  <div class="cb-roboto-light cb-margin-right-8 cb-font-size-xlarge-res">1170</div>
+                                  <div class="display-flex self-align-center range-container">
+                                    <div class="separator"></div>
+                                    <div class="display-flex">
+                                      <div class="sr-only">The Minimum and Maximum Score Range is</div>
+                                      <div class="score-range cb-roboto-thin align-self-center cb-align-left">
+                                        <div class="bottom-margin">400&nbsp;to</div>1600
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="partial-scores display-flex justify-content-between cb-no-padding-left">
+                              <div class="display-flex score small">
+                                <div class="flex-nowrap total-score">
+                                  <div class="cb-roboto-medium cb-paragraph2-st">Your Reading and Writing Score</div>
+                                  <div class="display-flex">
+                                    <div class="cb-roboto-light cb-margin-right-8 cb-paragraph4-res">570</div>
+                                    <div class="display-flex self-align-center range-container">
+                                      <div class="separator small"></div>
+                                      <div class="display-flex">
+                                        <div class="sr-only">The Minimum and Maximum Score Range is</div>
+                                        <div class="score-range cb-roboto-thin align-self-center cb-align-left">
+                                          <div class="bottom-margin">200&nbsp;to</div>800
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="display-flex score small">
+                                <div class="flex-nowrap total-score">
+                                  <div class="cb-roboto-medium cb-paragraph2-st">Your Math Score</div>
+                                  <div class="display-flex">
+                                    <div class="cb-roboto-light cb-margin-right-8 cb-paragraph4-res">600</div>
+                                    <div class="display-flex self-align-center range-container">
+                                      <div class="separator small"></div>
+                                      <div class="display-flex">
+                                        <div class="sr-only">The Minimum and Maximum Score Range is</div>
+                                        <div class="score-range cb-roboto-thin align-self-center cb-align-left">
+                                          <div class="bottom-margin">200&nbsp;to</div>800
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <span role="link" class="get-score-icon cb-blue5-color" tabindex="0"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Score Card 3: PSAT Fall 2025 -->
+                <div class="score-card cb-card cb-margin-top-48 cb-margin-bottom-48 visible">
+                  <div class="cb-card-content">
+                    <div class="row">
+                      <div class="col-xs-12 flex-column">
+                        <div id="display-title-2752" role="heading" aria-level="3" class="cb-h3 cb-roboto-medium cb-margin-bottom-8">
+                          PSAT/NMSQT Fall 2025 Administration
+                        </div>
+                        <div id="test-date-2752" class="cb-date-time-tags cb-paragraph1-res cb-roboto-light">
+                          <p>October 15, 2025</p>
+                          <p>11th Grade</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="hr cb-margin-top-16 cb-margin-bottom-24 visible"></div>
+
+                        <div>
+                          <div class="cb-margin-bottom-16">
+                            <div class="display-flex score">
+                              <div class="flex-nowrap total-score">
+                                <div class="cb-roboto-medium cb-paragraph1-res">Your Total Score</div>
+                                <div class="display-flex">
+                                  <div class="cb-roboto-light cb-margin-right-8 cb-font-size-xlarge-res">1230</div>
+                                  <div class="display-flex self-align-center range-container">
+                                    <div class="separator"></div>
+                                    <div class="display-flex">
+                                      <div class="sr-only">The Minimum and Maximum Score Range is</div>
+                                      <div class="score-range cb-roboto-thin align-self-center cb-align-left">
+                                        <div class="bottom-margin">320&nbsp;to</div>1520
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="partial-scores display-flex justify-content-between cb-no-padding-left">
+                              <div class="display-flex score small">
+                                <div class="flex-nowrap total-score">
+                                  <div class="cb-roboto-medium cb-paragraph2-st">Your Reading and Writing Score</div>
+                                  <div class="display-flex">
+                                    <div class="cb-roboto-light cb-margin-right-8 cb-paragraph4-res">580</div>
+                                    <div class="display-flex self-align-center range-container">
+                                      <div class="separator small"></div>
+                                      <div class="display-flex">
+                                        <div class="sr-only">The Minimum and Maximum Score Range is</div>
+                                        <div class="score-range cb-roboto-thin align-self-center cb-align-left">
+                                          <div class="bottom-margin">160&nbsp;to</div>760
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="display-flex score small">
+                                <div class="flex-nowrap total-score">
+                                  <div class="cb-roboto-medium cb-paragraph2-st">Your Math Score</div>
+                                  <div class="display-flex">
+                                    <div class="cb-roboto-light cb-margin-right-8 cb-paragraph4-res">650</div>
+                                    <div class="display-flex self-align-center range-container">
+                                      <div class="separator small"></div>
+                                      <div class="display-flex">
+                                        <div class="sr-only">The Minimum and Maximum Score Range is</div>
+                                        <div class="score-range cb-roboto-thin align-self-center cb-align-left">
+                                          <div class="bottom-margin">160&nbsp;to</div>760
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <span role="link" class="get-score-icon cb-blue5-color" tabindex="0"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Score Card 4: PSAT Fall 2024 -->
+                <div class="score-card cb-card cb-margin-top-48 cb-margin-bottom-48 visible">
+                  <div class="cb-card-content">
+                    <div class="row">
+                      <div class="col-xs-12 flex-column">
+                        <div id="display-title-2446" role="heading" aria-level="3" class="cb-h3 cb-roboto-medium cb-margin-bottom-8">
+                          PSAT/NMSQT Fall 2024 Administration
+                        </div>
+                        <div id="test-date-2446" class="cb-date-time-tags cb-paragraph1-res cb-roboto-light">
+                          <p>October 16, 2024</p>
+                          <p>10th Grade</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="hr cb-margin-top-16 cb-margin-bottom-24 visible"></div>
+
+                        <div>
+                          <div class="cb-margin-bottom-16">
+                            <div class="display-flex score">
+                              <div class="flex-nowrap total-score">
+                                <div class="cb-roboto-medium cb-paragraph1-res">Your Total Score</div>
+                                <div class="display-flex">
+                                  <div class="cb-roboto-light cb-margin-right-8 cb-font-size-xlarge-res">1010</div>
+                                  <div class="display-flex self-align-center range-container">
+                                    <div class="separator"></div>
+                                    <div class="display-flex">
+                                      <div class="sr-only">The Minimum and Maximum Score Range is</div>
+                                      <div class="score-range cb-roboto-thin align-self-center cb-align-left">
+                                        <div class="bottom-margin">320&nbsp;to</div>1520
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="partial-scores display-flex justify-content-between cb-no-padding-left">
+                              <div class="display-flex score small">
+                                <div class="flex-nowrap total-score">
+                                  <div class="cb-roboto-medium cb-paragraph2-st">Your Reading and Writing Score</div>
+                                  <div class="display-flex">
+                                    <div class="cb-roboto-light cb-margin-right-8 cb-paragraph4-res">500</div>
+                                    <div class="display-flex self-align-center range-container">
+                                      <div class="separator small"></div>
+                                      <div class="display-flex">
+                                        <div class="sr-only">The Minimum and Maximum Score Range is</div>
+                                        <div class="score-range cb-roboto-thin align-self-center cb-align-left">
+                                          <div class="bottom-margin">160&nbsp;to</div>760
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="display-flex score small">
+                                <div class="flex-nowrap total-score">
+                                  <div class="cb-roboto-medium cb-paragraph2-st">Your Math Score</div>
+                                  <div class="display-flex">
+                                    <div class="cb-roboto-light cb-margin-right-8 cb-paragraph4-res">510</div>
+                                    <div class="display-flex self-align-center range-container">
+                                      <div class="separator small"></div>
+                                      <div class="display-flex">
+                                        <div class="sr-only">The Minimum and Maximum Score Range is</div>
+                                        <div class="score-range cb-roboto-thin align-self-center cb-align-left">
+                                          <div class="bottom-margin">160&nbsp;to</div>760
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <span role="link" class="get-score-icon cb-blue5-color" tabindex="0"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Help Card (Bottom of Left Column) -->
+            <div class="help-card cb-margin-top-16 cb-margin-bottom-16">
+              <span class="cb-h4 cb-roboto display-flex help-card-content">
+                <div class="help-card-content-image-container">
+                  <img class="help-card-content-image" alt="Question?" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20width='96'%20height='96'%20viewBox='0%200%2064%2064'%3e%3cdefs%3e%3cpath%20id='yfat9tx50a'%20d='M0%200L64%200%2064%2064%200%2064z'/%3e%3cpath%20id='pcycxafz9c'%20d='M0%2064L64%2064%2064%200%200%200z'/%3e%3c/defs%3e%3cg%20fill='none'%20fill-rule='evenodd'%3e%3cg%3e%3cg%3e%3cg%20transform='translate(-164%20-4129)%20translate(164%204129)'%3e%3cmask%20id='exmy0o4u1b'%20fill='%23fff'%3e%3cuse%20xlink:href='%23yfat9tx50a'/%3e%3c/mask%3e%3cpath%20fill='%2371C5E8'%20d='M64%2032c0%2017.673-14.327%2032-32%2032C14.327%2064%200%2049.673%200%2032%200%2014.327%2014.327%200%2032%200c17.673%200%2032%2014.327%2032%2032'%20mask='url(%23exmy0o4u1b)'/%3e%3c/g%3e%3cg%20transform='translate(-164%20-4129)%20translate(164%204129)'%3e%3cpath%20fill='%231E1E1E'%20d='M32%2025.026c1.583%200%202.872%201.288%202.872%202.871%200%201.544-.72%202.105-1.718%202.882-1.062.83-2.385%201.86-2.385%204.093h2.462c0-.987.467-1.394%201.437-2.151%201.125-.877%202.665-2.078%202.665-4.824%200-2.94-2.392-5.333-5.333-5.333-2.94%200-5.333%202.393-5.333%205.333h2.461c0-1.583%201.289-2.871%202.872-2.871'/%3e%3cmask%20id='7dmm24knjd'%20fill='%23fff'%3e%3cuse%20xlink:href='%23pcycxafz9c'/%3e%3c/mask%3e%3cpath%20fill='%231E1E1E'%20d='M30.769%2040.205L33.231%2040.205%2033.231%2037.333%2030.769%2037.333z'%20mask='url(%237dmm24knjd)'/%3e%3cpath%20fill='%23FFF'%20d='M18.044%2045.949H45.94V18.05H18.044V45.95zm-2.462%202.461h32.82V15.59h-32.82v32.82z'%20mask='url(%237dmm24knjd)'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e">
+                </div>
+                <div class="help-card-content-text cb-roboto-light">
+                  <div>
+                    Need help? <a href="https://satsuite.collegeboard.org/digital" target="_blank">Learn more about the Digital SAT and registering online.</a>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
+
+          <!-- Right Column: Sidebar -->
+          <div class="col-xs-12 col-md-4 offset-md-1">
+            <div class="cb-margin-top-32"></div>
+
+            <!-- Practice for the SAT -->
+            <div class="primary-cta cb-margin-top-72">
+              <h3 class="cb-paragraph2-res cb-roboto cb-margin-left-16" style="font-size: 16px; font-weight: 400; color: #1e1e1e; margin-bottom: 0;">Practice for the SAT</h3>
+              <div class="hr cb-gray-5-bg cb-margin-top-8 cb-margin-bottom-8"></div>
+
+              <div class="cb-card-list-vertical">
+                <div>
+                  <div class="cb-padding-top-8 cb-padding-bottom-8">
+                    <div class="row display-flex cb-h5 cb-padding-left-16 cb-padding-top-4">
+                      <div style="width: 48px;">
+                        <span class="cb-icon cb-icon-circular cb-blue3-color cb-compose"></span>
+                      </div>
+                      <div style="flex: 1; padding: 0 12px;">
+                        <div class="cb-paragraph1-res" style="font-size: 14px; font-weight: 400; color: #1e1e1e;">
+                          <a href="https://bluebook.app.collegeboard.org/" target="_blank" style="color: inherit; text-decoration: none;">
+                            Take an SAT Practice Test in Bluebook
+                          </a>
+                        </div>
+                      </div>
+                      <div style="width: 32px; display: flex; align-items: center;">
+                        <span class="cb-icon cb-right" aria-hidden="true"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hr cb-gray-5-bg cb-margin-top-8 cb-margin-bottom-8"></div>
+                </div>
+
+                <div>
+                  <div class="cb-padding-top-8 cb-padding-bottom-8">
+                    <div class="row display-flex cb-h5 cb-padding-left-16 cb-padding-top-4">
+                      <div style="width: 48px;">
+                        <span class="cb-icon cb-icon-circular cb-blue3-color cb-compose"></span>
+                      </div>
+                      <div style="flex: 1; padding: 0 12px;">
+                        <div class="cb-paragraph1-res">
+                          <a href="https://www.khanacademy.org/digital-sat" target="_blank">
+                            Prepare for the SAT
+                          </a>
+                        </div>
+                      </div>
+                      <div style="width: 32px; display: flex; align-items: center;">
+                        <span class="cb-icon cb-right" aria-hidden="true"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hr cb-gray-5-bg cb-margin-top-8 cb-margin-bottom-8"></div>
+                </div>
+
+                <div>
+                  <div class="cb-padding-top-8 cb-padding-bottom-8">
+                    <div class="row display-flex cb-h5 cb-padding-left-16 cb-padding-top-4">
+                      <div style="width: 48px;">
+                        <span class="cb-icon cb-icon-circular cb-blue3-color cb-compose"></span>
+                      </div>
+                      <div style="flex: 1; padding: 0 12px;">
+                        <div class="cb-paragraph1-res">
+                          <a href="https://store.collegeboard.org/product/list?categoryCodes=STOR-SAT" target="_blank">
+                            Get Practice Materials
+                          </a>
+                        </div>
+                      </div>
+                      <div style="width: 32px; display: flex; align-items: center;">
+                        <span class="cb-icon cb-right" aria-hidden="true"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Next Steps Towards College -->
+            <div class="next-steps cb-margin-top-72">
+              <h3 class="cb-paragraph2-res cb-roboto cb-margin-left-16" style="font-size: 16px; font-weight: 400; color: #1e1e1e; margin-bottom: 0;">Next Steps Towards College</h3>
+              <div class="hr cb-gray-5-bg cb-margin-top-8 cb-margin-bottom-8"></div>
+
+              <div class="cb-card-list-vertical">
+                <div>
+                  <div class="cb-padding-top-8 cb-padding-bottom-8">
+                    <div class="row display-flex cb-h5 cb-padding-left-16 cb-padding-top-4">
+                      <div style="width: 48px;">
+                        <span class="cb-icon cb-icon-circular cb-blue4-color cb-opacity-7 cb-signed-in"></span>
+                      </div>
+                      <div style="flex: 1; padding: 0 12px;">
+                        <div class="cb-paragraph1-res">
+                          <a href="https://studentsearch.collegeboard.org/opt-in" target="_blank">
+                            Finish your student profile
+                          </a>
+                        </div>
+                      </div>
+                      <div style="width: 32px; display: flex; align-items: center;">
+                        <span class="cb-icon cb-right" aria-hidden="true"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hr cb-gray-5-bg cb-margin-top-8 cb-margin-bottom-8"></div>
+                </div>
+
+                <div>
+                  <div class="cb-padding-top-8 cb-padding-bottom-8">
+                    <div class="row display-flex cb-h5 cb-padding-left-16 cb-padding-top-4">
+                      <div style="width: 48px;">
+                        <span class="cb-icon cb-icon-circular cb-blue4-color cb-opacity-7 cb-list"></span>
+                      </div>
+                      <div style="flex: 1; padding: 0 12px;">
+                        <div class="cb-paragraph1-res">
+                          <a href="https://bigfuture.collegeboard.org/pay-for-college/bigfuture-scholarships" target="_blank">
+                            Earn scholarships by planning for college
+                          </a>
+                        </div>
+                      </div>
+                      <div style="width: 32px; display: flex; align-items: center;">
+                        <span class="cb-icon cb-right" aria-hidden="true"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
